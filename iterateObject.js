@@ -9,3 +9,16 @@ function iterateObject(obj) {
     }
   }
 |
+
+function iterateObject(obj) {
+   for(let prop in obj) {
+   if(typeof(obj[prop]) == "object"){
+     obj[prop] =  iterateObject(obj[prop]);
+   } else {
+     if(prop == "pageId") {
+         //do something
+     }
+   }
+   }
+   return obj;
+}
